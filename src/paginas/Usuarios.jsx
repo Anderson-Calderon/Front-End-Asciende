@@ -79,12 +79,12 @@ useEffect(()=>{
 		e.preventDefault();
 		
 
-		 await axios.post("http://localhost:4000/api/usuarios",usuario);
+		 await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,usuario);
 
 
 			   	 
 
-		alertaEditarAgregarError( "Usuario Agregado" ,"Usuario Agregado correctamente","success","http://localhost:5173/inicio/usuarios");
+		alertaEditarAgregarError( "Usuario Agregado" ,"Usuario Agregado correctamente","success","/inicio/usuarios");
 
 	}
 
@@ -97,18 +97,18 @@ useEffect(()=>{
 
 		if(nuevoPassword!=""){
 			
-				const data = await axios.put("http://localhost:4000/api/usuarios",{usuario,nuevoPassword});
+				const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario,nuevoPassword});
 
 				
 
 		}else{
 
-			const data = await axios.put("http://localhost:4000/api/usuarios",{usuario});
+			const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario});
 
 			
 		}
 
-		alertaEditarAgregarError("Usuario Editado","Usuario editado correctamente","success","http://localhost:5173/inicio/usuarios")
+		alertaEditarAgregarError("Usuario Editado","Usuario editado correctamente","success","/inicio/usuarios")
 
 	}
 
@@ -131,7 +131,7 @@ useEffect(()=>{
 
 
 
-			   	const obj = await axios.delete("http://localhost:4000/api/usuarios/"+id);
+			   	const obj = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/${id}`);
 
 
 			   	 	Swal.fire({
@@ -144,7 +144,7 @@ useEffect(()=>{
 					}).then(async (result) => {
 			  			if (result.isConfirmed) {
 
-			  					location.href="http://localhost:5173/inicio/usuarios"
+			  					location.href="/inicio/usuarios"
 
 
 			  				}
