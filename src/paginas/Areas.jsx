@@ -81,7 +81,7 @@ const Areas = ()=>{
 
 
 			  
-			   	const obj = await axios.delete(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas/${idArea}`);
+			   	const obj = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`);
 
 
 			   	 	Swal.fire({
@@ -94,7 +94,7 @@ const Areas = ()=>{
 					}).then(async (result) => {
 			  			if (result.isConfirmed) {
 
-			  					location.href="http://localhost:5173/inicio/areas"
+			  					location.href="/inicio/areas"
 
 
 			  				}
@@ -134,13 +134,13 @@ const Areas = ()=>{
 
 		
 
-		const data = await axios.put("http://localhost:4000/api/areas/"+idArea,{nombreArea});
+		const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`,{nombreArea});
 
 
 
 		
 
-		alertaEditarAgregarError('Área Editada',"Área editada correctamente",'success',"http://localhost:5173/inicio/areas");
+		alertaEditarAgregarError('Área Editada',"Área editada correctamente",'success',"/inicio/areas");
 
 
 		
@@ -154,7 +154,7 @@ const Areas = ()=>{
 
 		
 
-		alertaEditarAgregarError('Área Agregada',"Área agregada correctamente",'success',"http://localhost:5173/inicio/areas");
+		alertaEditarAgregarError('Área Agregada',"Área agregada correctamente",'success',"/inicio/areas");
 
 
 	}
