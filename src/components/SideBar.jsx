@@ -1,0 +1,136 @@
+
+import { useNavigate , useLocation } from 'react-router-dom'
+import {useEffect} from 'react';
+import useAuth from '../hooks/useAuth';
+const Sidebar = ()=>{
+	
+	let {pathname} = useAuth();
+		
+	useEffect(()=>{
+
+
+			const elementoActivo = document.querySelector(".active");
+			elementoActivo.classList.remove("active");
+
+		
+			if(pathname.replace("/","")=="inicio"){
+
+				const nuevoElementoActivo = document.querySelector("#inicio");
+
+				nuevoElementoActivo.classList.add("active");
+
+			}else{
+
+				pathname=pathname.replace("/inicio/","");
+
+				document.querySelector("#"+pathname).classList.add("active");
+
+			}
+
+		
+
+	},[]);
+
+
+
+
+
+
+	return(
+
+
+
+
+
+
+
+
+         <aside className="main-sidebar">
+
+		   <section className="sidebar">
+
+		    <ul className="sidebar-menu">
+
+		      <li id="inicio" className="active">
+
+		        <a 
+
+		        	onClick={(e)=>{establecerItemActivo(e)}}
+		        	
+		        	href="/inicio">
+
+		          <i class="fa-solid fa-house"></i>
+		          <span>   Inicio</span>
+
+		        </a>
+
+		      </li>
+
+		  
+
+		      <li id="usuarios" className="">
+
+		        <a 
+
+		        	onClick={(e)=>{establecerItemActivo(e)}}
+		        	href="http://localhost:5173/inicio/usuarios">
+
+		          <i class="fa-solid fa-users"></i>
+		          <span>   Usuarios </span>
+
+		        </a>
+
+		      </li>
+
+		      <li id="asistencias" className="">
+
+		        <a 
+
+		        	onClick={(e)=>{establecerItemActivo(e)}}
+		        	href="http://localhost:5173/inicio/asistencias">
+
+		          <i class="fa-solid fa-calendar-days"></i>
+		          <span>   Asistencias </span>
+
+		        </a>
+
+		      </li>
+
+		      <li id="areas" className="">
+
+		        <a 
+
+		        	onClick={(e)=>{establecerItemActivo(e)}}
+		        	href="http://localhost:5173/inicio/areas">
+
+		          <i class="fa-solid fa-layer-group"></i>
+		          <span>   Áreas </span>
+
+		        </a>
+
+		      </li>
+
+		  
+
+		     
+		   
+		      
+
+		    
+
+		    </ul>
+
+		   </section>
+
+		</aside>
+
+
+
+
+
+		  )
+
+}
+
+
+export default Sidebar;
