@@ -81,7 +81,7 @@ const Areas = ()=>{
 
 
 			  
-			   	const obj = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`);
+			   	const obj = await axios.delete(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas/${idArea}`);
 
 
 			   	 	Swal.fire({
@@ -150,7 +150,7 @@ const Areas = ()=>{
 
 		e.preventDefault();
 		
-		const data = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/areas`,{nombre:nombreArea});
+		const data = await axios.post(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas`,{nombre:nombreArea});
 
 		
 

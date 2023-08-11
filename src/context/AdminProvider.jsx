@@ -19,7 +19,7 @@ const AdminProvider = ({children})=>{
 		
 		const obtenerAreas = async ()=>{
 
-			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/areas`);
+			const {data} = await axios.get(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas`);
 
 			setAreas(data);
 
@@ -27,7 +27,7 @@ const AdminProvider = ({children})=>{
 
 		const obtenerUsuarios = async ()=>{
 
-			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`);
+			const {data} = await axios.get(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/usuarios`);
 			
 
 			setUsuarios(data);
@@ -36,7 +36,7 @@ const AdminProvider = ({children})=>{
 
 		const obtenerAsistencias = async ()=>{
 
-			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`);
+			const {data} = await axios.get(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/asistencias`);
 			setAsistencias(data);
 
 
