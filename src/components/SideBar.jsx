@@ -60,7 +60,7 @@ const Sidebar = ()=>{
 		        	to="/inicio">
 
 		          <i class="fa-solid fa-house"></i>
-		          <span>   Inicio</span>
+		          <span>   Inicios</span>
 
 		        </Link>
 
