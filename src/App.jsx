@@ -7,7 +7,7 @@ import RutaProtegida from './components/RutaProtegida';
 
 
 import RutaAdmin from './layout/RutaAdmin';
-import Inicio from './paginas/inicio';
+import Inicio from './paginas/Inicio';
 import Usuarios from './paginas/Usuarios';
 import Areas from './paginas/Areas';
 import Asistencias from './paginas/Asistencias';
