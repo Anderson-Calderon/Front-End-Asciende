@@ -7,10 +7,10 @@ import RutaProtegida from './components/RutaProtegida';
 
 
 import RutaAdmin from './layout/RutaAdmin';
-import Inicio from './paginas/inicio';
-import Usuarios from './paginas/usuarios';
-import Areas from './paginas/areas';
-import Asistencias from './paginas/asistencias';
+import Inicio from './paginas/Inicio';
+import Usuarios from './paginas/Usuarios';
+import Areas from './paginas/Areas';
+import Asistencias from './paginas/Asistencias';
 
 
 import AuthLayout from './layout/AuthLayout';
