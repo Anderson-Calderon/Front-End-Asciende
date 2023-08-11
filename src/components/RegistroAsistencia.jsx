@@ -43,7 +43,7 @@ const RegistroAsistencia = ()=>{
 
 		try{
 
-				await axios.post("http://localhost:4000/api/asistencias",{dni:dniAsistencia});
+				await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`,{dni:dniAsistencia});
 				
 
 				alertaEditarAgregarError( "Asistencia Realizada" ,"Asistencia realizada con éxito","success","http://localhost:5173/");
@@ -65,7 +65,7 @@ const RegistroAsistencia = ()=>{
 
 	try{
 
-		const data = await axios.put("http://localhost:4000/api/asistencias",{dni:dniAsistencia,tipoAsistencia});
+		const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`,{dni:dniAsistencia,tipoAsistencia});
 
 		
 
@@ -98,7 +98,7 @@ const RegistroAsistencia = ()=>{
 
 	try{
 
-		const data = await axios.put("http://localhost:4000/api/asistencias",formData);
+		const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`,formData);
 
 		alertaEditarAgregarError( "Asistencia Realizada" ,data.data.msg,"success","http://localhost:5173/");
 		

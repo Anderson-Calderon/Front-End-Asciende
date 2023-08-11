@@ -73,7 +73,7 @@ const Sidebar = ()=>{
 		        <a 
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
-		        	href="http://localhost:5173/inicio/usuarios">
+		        	href="/inicio/usuarios">
 
 		          <i class="fa-solid fa-users"></i>
 		          <span>   Usuarios </span>
@@ -87,7 +87,7 @@ const Sidebar = ()=>{
 		        <a 
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
-		        	href="http://localhost:5173/inicio/asistencias">
+		        	href="/inicio/asistencias">
 
 		          <i class="fa-solid fa-calendar-days"></i>
 		          <span>   Asistencias </span>
@@ -101,7 +101,7 @@ const Sidebar = ()=>{
 		        <a 
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
-		        	href="http://localhost:5173/inicio/areas">
+		        	href="/inicio/areas">
 
 		          <i class="fa-solid fa-layer-group"></i>
 		          <span>   Áreas </span>
