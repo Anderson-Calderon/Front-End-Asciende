@@ -46,13 +46,13 @@ const RegistroAsistencia = ()=>{
 				await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`,{dni:dniAsistencia});
 				
 
-				alertaEditarAgregarError( "Asistencia Realizada" ,"Asistencia realizada con éxito","success","http://localhost:5173/");
+				alertaEditarAgregarError( "Asistencia Realizada" ,"Asistencia realizada con éxito","success","/");
 
 				
 
 			}catch(error){
 
-				alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","http://localhost:5173/");
+				alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","/");
 				
 
 			}
@@ -69,13 +69,13 @@ const RegistroAsistencia = ()=>{
 
 		
 
-		alertaEditarAgregarError( "Asistencia Realizada" ,data.data.msg,"success","http://localhost:5173/");
+		alertaEditarAgregarError( "Asistencia Realizada" ,data.data.msg,"success","/");
 
 
 
 	}catch(error){
 
-		alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","http://localhost:5173/");
+		alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","/");
 		
 
 	}
@@ -100,11 +100,11 @@ const RegistroAsistencia = ()=>{
 
 		const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`,formData);
 
-		alertaEditarAgregarError( "Asistencia Realizada" ,data.data.msg,"success","http://localhost:5173/");
+		alertaEditarAgregarError( "Asistencia Realizada" ,data.data.msg,"success","/");
 		
 		
 	}catch(error){
-		alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","http://localhost:5173/");
+		alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","/");
 		
 
 	}
@@ -186,7 +186,7 @@ const RegistroAsistencia = ()=>{
 							    	 onChange={(e)=>{setDataImagen(URL.createObjectURL(e.target.files[0]))}}
 							    	 id="captura-asistencia" type="file" className="form-control" placeholder="Ingresa Tu foto" required />
 							    	
-						  </div> : tipoAsistencia=="salida del trabajo" && alertaEditarAgregarError( "Error" ,"Aún no puedes marcar tu hora de salida . La salida es a las 18:00","error","http://localhost:5173/")
+						  </div> : tipoAsistencia=="salida del trabajo" && alertaEditarAgregarError( "Error" ,"Aún no puedes marcar tu hora de salida . La salida es a las 18:00","error","/")
 
 						  }
 
