@@ -150,7 +150,7 @@ const Areas = ()=>{
 
 		e.preventDefault();
 		
-		const data = await axios.post("http://localhost:4000/api/areas",{nombre:nombreArea});
+		const data = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/areas`,{nombre:nombreArea});
 
 		
 

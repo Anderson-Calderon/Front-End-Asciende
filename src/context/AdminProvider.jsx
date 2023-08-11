@@ -19,7 +19,7 @@ const AdminProvider = ({children})=>{
 		
 		const obtenerAreas = async ()=>{
 
-			const {data} = await axios.get("http://localhost:4000/api/areas");
+			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/areas`);
 
 			setAreas(data);
 
@@ -27,7 +27,7 @@ const AdminProvider = ({children})=>{
 
 		const obtenerUsuarios = async ()=>{
 
-			const {data} = await axios.get("http://localhost:4000/api/usuarios");
+			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`);
 			
 
 			setUsuarios(data);
@@ -36,7 +36,7 @@ const AdminProvider = ({children})=>{
 
 		const obtenerAsistencias = async ()=>{
 
-			const {data} = await axios.get("http://localhost:4000/api/asistencias");
+			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`);
 			setAsistencias(data);
 
 
