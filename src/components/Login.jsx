@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import useAuth from '../hooks/UseAuth';
+import useAuth from '../hooks/useAuth';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {alertaEditarAgregarError} from '../helpers/Alerta';
