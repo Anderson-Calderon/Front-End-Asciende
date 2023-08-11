@@ -80,8 +80,8 @@ const Areas = ()=>{
 			  if (result.isConfirmed) {
 
 
-
-			   	const obj = await axios.delete("http://localhost:4000/api/areas/"+idArea);
+			  
+			   	const obj = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`);
 
 
 			   	 	Swal.fire({

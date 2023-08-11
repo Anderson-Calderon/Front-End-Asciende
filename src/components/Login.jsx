@@ -17,7 +17,7 @@ const Login = ()=>{
 		try{
 
 
-			const {data} = await axios.post("http://localhost:4000/api/usuarios/login",auth);
+			const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios/login`,auth);
 
 			setAuth(data);
 
