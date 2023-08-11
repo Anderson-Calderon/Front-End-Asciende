@@ -1,5 +1,5 @@
 
-import { useNavigate , useLocation } from 'react-router-dom'
+import { useNavigate , useLocation , Link } from 'react-router-dom'
 import {useEffect} from 'react';
 import useAuth from '../hooks/useAuth';
 const Sidebar = ()=>{
@@ -53,16 +53,16 @@ const Sidebar = ()=>{
 
 		      <li id="inicio" className="active">
 
-		        <a 
+		        <Link 
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
 		        	
-		        	href="/inicio">
+		        	to="/inicio">
 
 		          <i class="fa-solid fa-house"></i>
 		          <span>   Inicio</span>
 
-		        </a>
+		        </Link>
 
 		      </li>
 
@@ -70,15 +70,15 @@ const Sidebar = ()=>{
 
 		      <li id="usuarios" className="">
 
-		        <a 
+		        <Link
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
-		        	href="/inicio/usuarios">
+		        	to="/inicio/usuarios">
 
 		          <i class="fa-solid fa-users"></i>
 		          <span>   Usuarios </span>
 
-		        </a>
+		        </Link>
 
 		      </li>
 
