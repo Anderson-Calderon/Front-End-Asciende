@@ -53,16 +53,16 @@ const Sidebar = ()=>{
 
 		      <li id="inicio" className="active">
 
-		        <Link 
+		        <a
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
 		        	
-		        	to="/inicio">
+		        	href="/inicio">
 
 		          <i class="fa-solid fa-house"></i>
 		          <span>   Inicios </span>
 
-		        </Link>
+		        </a>
 
 		      </li>
 
@@ -70,15 +70,15 @@ const Sidebar = ()=>{
 
 		      <li id="usuarios" className="">
 
-		        <Link
+		        <a
 
 		        	onClick={(e)=>{establecerItemActivo(e)}}
-		        	to="/inicio/usuarios">
+		        	href="/inicio/usuarios">
 
 		          <i class="fa-solid fa-users"></i>
 		          <span>   Usuarios </span>
 
-		        </Link>
+		        </a>
 
 		      </li>
 

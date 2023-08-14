@@ -7,6 +7,7 @@ const Areas = ()=>{
 	
 	const {areas,setAreas} = useAdmin();
 	const [nombreArea , setNombreArea] = useState("");
+	const [idArea,setIdArea] = useState("");
 
 
 
@@ -54,7 +55,32 @@ const Areas = ()=>{
     },500);
 
 
-  
+  const body = document.querySelector("body");
+
+	body.addEventListener("click",function(e){
+
+		const elemento = e.target;
+
+		if(elemento.getAttribute("id")=="btn-editar"){
+
+
+			console.log(elemento.getAttribute("data-area"));
+
+			setNombreArea(elemento.getAttribute("data-area"));
+			setIdArea(elemento.getAttribute("data-id"));
+		}
+
+		if(elemento.getAttribute("id")=="btn-eliminar"){
+
+
+			console.log(elemento.getAttribute("data-id"));
+
+			
+			
+			eliminarArea(elemento.getAttribute("data-id"));
+		}
+
+	});
 
 
 
@@ -129,18 +155,22 @@ const Areas = ()=>{
 	const editarArea = async (e)=>{
 
 		e.preventDefault();
-		const nombreArea = document.querySelector("#nombre-area").value,
-			  idArea = document.querySelector("#areaId").value;
-
 		
 
-		const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`,{nombreArea});
+		try{
+
+			const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/areas/${idArea}`,{nombreArea});
 
 
+			alertaEditarAgregarError('Área Editada',"Área editada correctamente",'success',"/inicio/areas");
+
+		}catch(error){
+
+			alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","");
+
+		}
 
 		
-
-		alertaEditarAgregarError('Área Editada',"Área editada correctamente",'success',"/inicio/areas");
 
 
 		
@@ -150,11 +180,21 @@ const Areas = ()=>{
 
 		e.preventDefault();
 		
-		const data = await axios.post(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas`,{nombre:nombreArea});
+		try{
+
+			const data = await axios.post(`https://aqueous-dawn-54000-9bdf4e305f79.herokuapp.com/api/areas`,{nombre:nombreArea});
+
+			alertaEditarAgregarError('Área Agregada',"Área agregada correctamente",'success',"/inicio/areas");
+
+		}catch(error){
+
+			alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","");
+
+		}
 
 		
 
-		alertaEditarAgregarError('Área Agregada',"Área agregada correctamente",'success',"/inicio/areas");
+		
 
 
 	}
@@ -241,14 +281,20 @@ const Areas = ()=>{
 
 																		<button 
 
-																			onClick={()=>{editarAreaInputs(area)}}
+																		id="btn-editar"
+																		data-area={nombre}
+																		data-id={area._id}	
 																		type="button" className="btn bg-sky-600 text-white hover:btn-sky-500 hover:text-white" data-toggle="modal" data-target="#modalEditar" >EDITAR</button>
 
 
 
 																		<button 
+
+																		id="btn-eliminar"
+																		
+																		data-id={area._id}	
 																		className="ml-5 btn bg-red-500 text-white hover:bg-red-400 hover:text-white"
-																		 onClick={()=>{eliminarArea(area._id)}} >ELIMINAR</button>
+																		  >ELIMINAR</button>
 
 																	</td>
 
@@ -303,7 +349,7 @@ const Areas = ()=>{
 
 		  <div className="input-group">
 		    <span className="input-group-addon"><i class="fa-solid fa-layer-group"></i></span>
-		    <input id="nombre-area" type="text" className="form-control" name="text" placeholder="Nombre Del Área" required />
+		    <input onChange={(e)=>{setNombreArea(e.target.value)}} value={nombreArea}   id="nombre-area" type="text" className="form-control"  placeholder="Nombre Del Área" required />
 		  </div>
 
 

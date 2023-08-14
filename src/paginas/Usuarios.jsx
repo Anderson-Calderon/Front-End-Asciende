@@ -64,8 +64,34 @@ useEffect(()=>{
 
 
   
+    const body = document.querySelector("body");
+
+    body.addEventListener("click",function(e){
+
+    	const elemento = e.target;
+
+    	if(elemento.getAttribute("id")=="btn-eliminar"){
 
 
+    		console.log(elemento.getAttribute("data-id"));
+
+    		eliminarUsuario({_id : elemento.getAttribute("data-id")} );
+    	}
+
+    	if(elemento.getAttribute("id")=="btn-editar"){
+
+    		const _id = elemento.getAttribute("data-id"),
+    		      nombre = elemento.getAttribute("data-nombre"),
+    		      apellido=elemento.getAttribute("data-apellido"),
+    		      dni = elemento.getAttribute("data-dni"),
+    		      area = elemento.getAttribute("data-area");
+    		
+    			setUsuario({_id,nombre,apellido,dni,area});
+
+    		
+    	}
+
+    });
 
 
 
@@ -79,12 +105,18 @@ useEffect(()=>{
 		e.preventDefault();
 		
 
-		 await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,usuario);
+		 try{
 
+		 	await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,usuario);
 
-			   	 
+			alertaEditarAgregarError( "Usuario Agregado" ,"Usuario Agregado correctamente","success","/inicio/usuarios");
 
-		alertaEditarAgregarError( "Usuario Agregado" ,"Usuario Agregado correctamente","success","/inicio/usuarios");
+		 }catch(error){
+
+		 	
+			 alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","");
+
+		 }
 
 	}
 
@@ -97,24 +129,50 @@ useEffect(()=>{
 
 		if(nuevoPassword!=""){
 			
-				const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario,nuevoPassword});
+			
+				try{
+
+					const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario,nuevoPassword});
+
+					alertaEditarAgregarError("Usuario Editado","Usuario editado correctamente","success","/inicio/usuarios");
+
+				}catch(error){
+
+					alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","");
+
+				}
 
 				
 
 		}else{
 
-			const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario});
+			
+
+			try{
+
+					const data = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/usuarios`,{usuario});
+
+					alertaEditarAgregarError("Usuario Editado","Usuario editado correctamente","success","/inicio/usuarios");
+
+				}catch(error){
+
+					alertaEditarAgregarError( "Error" ,error.response.data.msg,"error","");
+
+				}
 
 			
 		}
 
-		alertaEditarAgregarError("Usuario Editado","Usuario editado correctamente","success","/inicio/usuarios")
+		
 
 	}
 
 	const eliminarUsuario = (usuario)=>{
 
 		const {_id : id} = usuario;
+
+		console.log(id);
+
 
 
 		Swal.fire({
@@ -247,11 +305,19 @@ useEffect(()=>{
 														<button 
 
 															onClick={()=>{setUsuario(user)}}
+																id="btn-editar"
+																data-id={id}
+																data-nombre={nombre}
+																data-apellido={apellido}
+																data-area={area}
+																data-dni={dni}
 																type="button" className="btn bg-sky-600 hover:text-white hover:bg-sky-500 text-white"  data-toggle="modal" data-target="#modalEditar" >EDITAR</button>
 
 														<button 
 
 															onClick={()=>{eliminarUsuario(user)}}
+																id="btn-eliminar"
+																data-id={id}
 																type="button" className="ml-5 btn bg-red-500 hover:text-white hover:bg-red-400 text-white"   >ELIMINAR
 																
 																</button>		
