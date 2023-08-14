@@ -60,7 +60,7 @@ const Sidebar = ()=>{
 		        	href="/inicio">
 
 		          <i class="fa-solid fa-house"></i>
-		          <span>   Inicios </span>
+		          <span>   Inicio </span>
 
 		        </a>
 

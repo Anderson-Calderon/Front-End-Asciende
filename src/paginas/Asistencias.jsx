@@ -51,8 +51,25 @@ const Asistencias =()=>{
 
     },500);
 
+    const body = document.querySelector("body");
 
-  
+    body.addEventListener("click",function(e){
+
+      const elemento = e.target;
+
+      if(elemento.getAttribute("id")=="captura-imagen"){
+
+        const captura = elemento.getAttribute("data-url");
+              
+        
+          setUrlCaptura(captura);
+
+        
+      }
+
+    });
+
+
 
 
 
@@ -194,7 +211,7 @@ const Asistencias =()=>{
 										<td className="px-5">{horaSalidaAlmuerzo}</td>
 										<td className="px-5">{horaIngresoAlmuerzo}</td>
 										<td className="px-5">{horaSalida}</td>
-										<td className="px-5"><img onClick={()=>{setUrlCaptura(captura)}} data-toggle="modal" data-target="#modalMostrarFoto"  src={captura} className="w-72 hover:cursor-pointer" /></td>
+										<td className="px-5"><img id="captura-imagen" data-url={captura} data-toggle="modal" data-target="#modalMostrarFoto"  src={captura} className="w-72 hover:cursor-pointer" /></td>
 
 
 
