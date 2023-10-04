@@ -139,8 +139,8 @@ const Asistencias =()=>{
               <ul className='w-4/5 flex flex-col  justify-items-center pl-28'>
               
                 <li className="flex justify-start">  <span className="h-14 w-14 bg-red-500 inline-block mr-5"></span> Muy Tarde </li>
-                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-green-400 inline-block mr-5"></span> Tarde </li>
-                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-lime-300 inline-block mr-5"></span> Temprano </li>
+                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-red-500 inline-block mr-5"></span> Tarde </li>
+                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-red-800 inline-block mr-5"></span> Temprano </li>
               </ul>
 
             </div>
@@ -240,7 +240,7 @@ const Asistencias =()=>{
 										<td className="px-5"><span className={ !horaSalidaAlmuerzo.includes(":") ?  "py-4 px-5 text-red" : "py-4 px-5"} >{horaSalidaAlmuerzo}</span></td>
 										<td className="px-5 flex justify-center"><span className={  
 
-                                                                  !horaIngresoAlmuerzo.includes(":") ? "py-4 px-5 text-red" : obtenerDiferenciaDeHoras(horaSalidaAlmuerzo,horaIngresoAlmuerzo) <= 3600 ? "bg-lime-300 py-4 px-5 text-black rounded-lg" : obtenerDiferenciaDeHoras(horaSalidaAlmuerzo,horaIngresoAlmuerzo) <= 3900 ? "bg-green-400 py-4 px-5 text-white rounded-lg" :"bg-red-500 py-4 px-5 text-white rounded-lg"
+                                                                  !horaIngresoAlmuerzo.includes(":") ? "py-4 px-5 text-red" : obtenerDiferenciaDeHoras(horaSalidaAlmuerzo,horaIngresoAlmuerzo) <= 3600 ? "bg-lime-300 py-4 px-5 text-black rounded-lg" : obtenerDiferenciaDeHoras(horaSalidaAlmuerzo,horaIngresoAlmuerzo) <= 3900 ? "bg-red-500 py-4 px-5 text-white rounded-lg" :"bg-red-800 py-4 px-5 text-white rounded-lg"
 
                                                                     
 
