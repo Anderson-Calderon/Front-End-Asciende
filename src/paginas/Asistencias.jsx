@@ -138,9 +138,9 @@ const Asistencias =()=>{
   
               <ul className='w-4/5 flex flex-col  justify-items-center pl-28'>
               
-                <li className="flex justify-start">  <span className="h-14 w-14 bg-red-500 inline-block mr-5"></span> Muy Tarde </li>
+                <li className="flex justify-start">  <span className="h-14 w-14 bg-red-800 inline-block mr-5"></span> Muy Tarde </li>
                 <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-red-500 inline-block mr-5"></span> Tarde </li>
-                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-red-800 inline-block mr-5"></span> Temprano </li>
+                <li className="flex justify-start mt-5">  <span className="h-14 w-14 bg-lime-300 inline-block mr-5"></span> Temprano </li>
               </ul>
 
             </div>
