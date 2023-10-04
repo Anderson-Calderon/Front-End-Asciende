@@ -236,7 +236,7 @@ const Asistencias =()=>{
 										<td className="px-5">{nombre}</td>
 										<td className="px-5">{apellido}</td>
 										<td className="px-5">{fecha}</td>
-										<td className="px-5 flex justify-center"><span className={ horaIngreso >= "09:00:00" && horaIngreso<="09:45:00" ? "bg-lime-300 py-4 px-5 text-black rounded-lg" :  horaIngreso > "09:45:00" && horaIngreso<="10:00:00" ? "bg-green-400 py-4 px-5 text-white rounded-lg" :  "bg-red-500 py-4 px-5 text-white rounded-lg" }   >{horaIngreso}</span> </td>
+										<td className="px-5 flex justify-center"><span className={ horaIngreso<="09:45:00" ? "bg-lime-300 py-4 px-5 text-black rounded-lg" :  horaIngreso > "09:45:00" && horaIngreso<="10:00:00" ? "bg-green-400 py-4 px-5 text-white rounded-lg" :  "bg-red-500 py-4 px-5 text-white rounded-lg" }   >{horaIngreso}</span> </td>
 										<td className="px-5"><span className={ !horaSalidaAlmuerzo.includes(":") ?  "py-4 px-5 text-red" : "py-4 px-5"} >{horaSalidaAlmuerzo}</span></td>
 										<td className="px-5 flex justify-center"><span className={  
 
