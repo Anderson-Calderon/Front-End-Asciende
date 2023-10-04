@@ -26,7 +26,7 @@ const RegistroAsistencia = ()=>{
 				
 
 
-		}else if(tipoAsistencia=="almuerzo"){
+		}else if(tipoAsistencia=="idda" || tipoAsistencia=="saa"){
 
 			await editarHoraAsistenciaAlmuerzo();
 		}else {
@@ -170,14 +170,15 @@ const RegistroAsistencia = ()=>{
 
 					    	<option value="" disabled >--Seleccione--</option>
 					    	<option value="ingreso al trabajo"  >Ingreso Al Trabajo</option>
-					    	<option value="almuerzo"  >Almuerzo</option>
+					    	<option value="saa"  >Salir a Almorzar</option>
+							<option value="idda">Ingreso despúes de almuerzo</option>
 					    	<option value="salida del trabajo"  >Salida Del Trabajo</option>
 
 					    </select>
 
 					      {
 
-						  	(tipoAsistencia=="salida del trabajo" && hora>="18:00:00") ?
+						  	(tipoAsistencia=="salida del trabajo") ?
 
 						  	<div className="input-group mt-5">
 							    <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>

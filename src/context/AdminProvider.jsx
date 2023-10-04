@@ -38,6 +38,7 @@ const AdminProvider = ({children})=>{
 
 			const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/asistencias`);
 			setAsistencias(data);
+			
 
 
 		}
